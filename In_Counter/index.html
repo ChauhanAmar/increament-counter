@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IcreamentCounter</title>
+</head>
+<body style="background-color:powderblue;">
+    <div class="counter-container">
+    <i class="fa-solid fa-mug-hot fa-5x"></i>
+    <div class="counter" data-target="4000"></div>
+    <span>Projects Completed</span>
+    </div>
+
+    <div class="counter-container">
+        <i class="fa-solid fa-mug-hot fa-5x"></i>
+        <div class="counter" data-target="4000"></div>
+        <span>Happy clients</span>
+        </div>
+
+        <div class="counter-container">
+            <i class="fa-solid fa-mug-hot fa-5x"></i>
+            <div class="counter" data-target="4000"></div>
+            <span>Ongoing Projects</span>
+            </div>
+    
+</body>
+<script>
+    const counters= document.querySelectorAll('.counter');
+counters.forEach((counter)=>{
+    counter.innerHTML=0;
+
+
+const updatecounter=()=>{
+const targetCount = +counter.getAttribute('data-target');
+//   console.log(targetCount);  
+const startingCount= Number(counter.innerHTML);
+const incr= targetCount/100;
+
+if(startingCount<tagetCount){
+    counter.innerHTML = `${Math.round(startingCount + incr)}`;
+    setTimeout(updatecounte,10)
+}else{
+    counter.innerHTML=targetCount;
+}
+
+}
+updatecounter();
+})
+</script>
+</html>
